@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+html {
+    font-family: 'Clash Grotesk', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.header {
+    font-weight: 500;
+    font-size: 1.2rem;
+    position: fixed;
+    top: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 2.5rem;
+}
+
+.header .header__paragraph {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.header .header__paragraph::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.header .header__link {
+    color: black;
+    text-underline-offset: .5rem;
+}
+
+.content__wrapper {
+    padding: 0 3.5rem 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.left__container, .right__container {
+    flex-basis: 50%;
+}
+
+.left__container {
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5.5rem 0 1.5rem 0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.left__container .top__wrapper .stack__wrapper,
+.left__container .bottom__wrapper {
+    overflow: hidden;
+}
+
+.left__container .top__wrapper .stack__wrapper--paragraph {
+    font-size: 9rem;
+    line-height: .8;
+    letter-spacing: -6px;
+}
+
+.left__container .top__wrapper .stack__wrapper .stack__wrapper--word,
+.left__container .top__wrapper .stack__wrapper .btmStack__wrapper--word {
+    margin: .2rem 0;
+    padding-top: .6rem;
+}
+
+.left__container .top__wrapper .stack__wrapper .stack__wrapper--word .letter,
+.left__container .top__wrapper .stack__wrapper .btmStack__wrapper--word .back__letter {
+    font-size: 9rem;
+    line-height: .62;
+    letter-spacing: -6px;
+    display: inline-block;
+    will-change: transform;
+}
+
+.left__container .bottom__wrapper {
+    overflow: hidden;
+}
+
+.left__container .bottom__wrapper .first__list,
+.left__container .bottom__wrapper .second__list {
+    margin: .2rem 0;
+    padding-top: .3rem;
+}
+
+.left__container .bottom__wrapper .first__list .first__list--letter,
+.left__container .bottom__wrapper .second__list .second__list--letter {
+    font-size: 7rem;
+    line-height: .65;
+    letter-spacing: -6px;
+    display: inline-block;
+    will-change: transform;
+}
+
+/* Right container styles */ 
+.right__container {
+    margin: 0 0 0 auto;
+}
+
+.right__container--heading {
+    padding: 5.5rem 0 1rem;
+    border-bottom: 1px solid rgb(199, 194, 194);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.accordion .accordion__panel {
+    border-bottom: 1px solid rgb(199, 194, 194);
+}
+
+.accordion .accordion__button {
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.accordion .accordion__span {
+    padding: 1.5rem 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.accordion .indicator {
+    width: .9rem;
+    height: 2px;
+    background-color: black;
+    position: relative;
+}
+
+.accordion .indicator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: .9rem;
+    height: 2px;
+    background-color: black;
+    transition: .6s ease-out;
+}
+
+.accordion .accordion__button.active .indicator::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0;
+}
+
+.accordion .accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .7s ease-in-out;
+}
+
+.accordion .accordion__content.active {
+    max-height: 100px;
+    transition: max-height .7s ease-in;
+}
+
+.accordion .accordion__content--text {
+    width: 60%;
+    padding-bottom: 1.5rem;
+    font-weight: 400;
+}
