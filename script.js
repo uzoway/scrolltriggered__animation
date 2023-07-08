@@ -20,8 +20,7 @@ ScrollTrigger.create({
     trigger: ".trigger__animation",
     start: "top 20%",
     animation: transformTl,
-    toggleAction: "play none none reverse",
-    markers: true,
+    onLeaveBack: () => transformTl.reverse(),
 })
 
 
