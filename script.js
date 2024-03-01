@@ -9,7 +9,7 @@ const firstLetter = gsap.utils.toArray(".first__list--letter");
 const secondLetter = gsap.utils.toArray(".second__list--letter");
 
 // Timeline containing all transform tween
-let transformTl = gsap.timeline({ defaults: { stagger: 0.1, ease: "expo.inOut", duration: 1.3, }})
+let transformTl = gsap.timeline({ defaults: { stagger: 0.1, ease: "power3.inOut", duration: 1.1, }})
 .to(frontendLetter, { yPercent: () => -120 }, 0)
 .to(backendLetter, { yPercent: () => -120 }, 0)
 .to(firstLetter, { y: () => -document.querySelector(".first__list").offsetHeight + "px" }, 0)
